@@ -6,10 +6,11 @@ var charOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 // Pick random Character. But I cannot get it to get 8 characters minimal it just one at the time.
 var passLength = 8;
 var pwd = "";
-var getCharOptions = charOptions[Math.floor(Math.random() * charOptions.length)];
+var getCharOptions = charOptions[Math.floor(Math.random() * charOptions.length,)];
 
 for (var i = 0; i <= charOptions.length; i++) {
   var pwd = charOptions[i];
+
   
 }
 
@@ -17,16 +18,26 @@ console.log(getCharOptions);
 
 // Write password to the #password input, NOT define yet.
 function writePassword() {
+
+  // if (lengthPassword < 8 || lengthPassword > 128) {
+  //   alert("Password must be between 8 & 128 characters.")
+  //   return;
+  // }
+
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
   
   var getPwdLenght = Number(prompt("Password length between 8 and 128, please?", ""));
   var getLowUpperCase = confirm("You need low and upper cases!");
   var getSymbNumb = confirm("Also you need Numbers and Symbols, not opnional.");
+  
   var password = generatePassword();
   
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
+
 
 // What fuction to call when click button.
 generateBtn.addEventListener("click", writePassword);{
