@@ -8,7 +8,7 @@ var passLength = 8;
 var pwd = "";
 var getCharOptions = charOptions[Math.floor(Math.random() * charOptions.length,)];
 
-for (var i = 0; i <= charOptions.length; i++) {
+for (var i = 0; i <= charOptions.length; i+=) {
   var pwd = charOptions[i];
 
   
