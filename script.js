@@ -1,44 +1,82 @@
-window.onload = function () {
-  //run js code here
 
 
-// Assignment HTML #id.
-  var generateBtn = document.querySelector("#generate");
-  var charOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+"];
-// Pick random Character. 
-  var pwd = ""; 
-  var getPwdLenght = parseInt(prompt("Password length between 8 and 128, please?", ""));
-  for (var i = 0; i <= getPwdLenght; i++) {
-  var getCharOptions = charOptions[Math.floor(Math.random() * charOptions.length)];
-  pwd += getCharOptions;
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+var numChar;
+var upperCase;
+var lowerCase;
+var numbers;
+var specialChar;
+var password = "";
+
+
+function promptUser() {
+    password = "";
+    numChar = prompt("How many characters would you like your password to be? (8-128 characters");
+    while (numChar < 8 || numChar > 128) {
+    numChar = prompt('Character choice must be between 8 and 128 characters. Please select the number of characters you would like for your password.');
+    }
+
+    upperCase = confirm("Do you need ABC?");
+    lowerCase = confirm("DO you need abc?");
+    numbers = confirm("DO you need numbers?");
+    specialChar = confirm("Do you need symbols?");
 }
 
+var charSet = [
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "abcdefghijklmnopqrstuvwxyz",
+    "0123456789",
+    "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
+];
 
-// Write password to the #password input, NOT define yet.
+var charString = "";
+
+function selectedChar() {
+
+    if (upperCase == true) {
+        charString = charString + charSet[0].toString();
+    }
+    if (lowerCase == true) {
+        charString = charString + charSet[1].toString();
+    }
+    if (numbers == true) {
+        charString = charString + charSet[2].toString();
+    }
+    if (specialChar == true) {
+        charString = charString + charSet[3].toString();
+    }
+
+}
+
+function generatePassword() {
+
+    var charArray = charString.split("");
+
+    for (var i = 0; i < numChar; i++) {
+
+        var random = Math.floor(Math.random() * charString.length);
+        var randomChar = charArray[random];
+
+        console.log(`Random ${random} Char ${i + 1}: ${randomChar}`)
+
+        password += randomChar;
+
+    }
+
+}
+// Write password to the #password input
 function writePassword() {
 
-  var passwordText = document.querySelector("#password");
-  passwordText.value = (pwd);
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);{
-
-  
-  var getLowUpperCase = confirm("You need low and upper cases!");
-  var getSymbNumb = confirm("Also you need Numbers and Symbols, not opnional.");
-
-  
-}
-
-function defineCriteriaForPassword() {
-
-  // We need to generate random number to find a random character
-}
-
-};
-
-
-
-
+// Add event listeners to generate button
+generateBtn.addEventListener("click", promptUser);
+generateBtn.addEventListener("click", selectedChar);
+generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
