@@ -8,7 +8,7 @@ var passLength = 8;
 var pwd = "";
 var getCharOptions = charOptions[Math.floor(Math.random() * charOptions.length,)];
 
-for (var i = 0; i <= charOptions.length; i+=) {
+for (var i=0; i<= charOptions.length; i+=) {
   var pwd = charOptions[i];
 
   
@@ -19,10 +19,10 @@ console.log(getCharOptions);
 // Write password to the #password input, NOT define yet.
 function writePassword() {
 
-  // if (lengthPassword < 8 || lengthPassword > 128) {
-  //   alert("Password must be between 8 & 128 characters.")
-  //   return;
-  // }
+  if (lengthPassword < 8 || lengthPassword > 128) {
+    alert("Password must be between 8 & 128 characters.")
+    return;
+  }
 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;

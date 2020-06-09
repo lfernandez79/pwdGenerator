@@ -1,4 +1,4 @@
-# 03 JavaScript: THIS WAS MY MOST CHALLENGING HOMEWORK, I CANNOT GET ANYTHING DONE HERE. I WAS ABLE TO GET PROMPTS AND CONFIRMS. I ALSO MANAGE TO PICK RAMDON CHARACTERS BUT IS GIVING ME ONLY ONE, I CANNOT GET 8 OR MORE. AND YOU CAN ONLY SEE IT IN THE CONSOLE.LOG BECAUSE I COULDN'T LINK IT TO THE TEXT AREA EITHER. I'M JUST GOING TO SUBMIITED THE WAY IT IS AND PERHAPS FIX IT LATER WHEN I HAVE A MORE SOLID FOUNDATION  :(
+
 
 Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
