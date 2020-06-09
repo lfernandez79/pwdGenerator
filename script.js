@@ -30,7 +30,7 @@ var charSet = [
     "0123456789",
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ];
-console.log(charSet.length;
+console.log(charSet.length);
 
 var charString = "";
 
