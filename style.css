@@ -78,10 +78,10 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px  0px;
-  color: hsl(0, 0%, 100%);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: hsl(206, 72%, 55%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -110,12 +110,12 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
+  padding-bottom: 15px;
+  font-size: 1.5rem;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 3px ridge #4884c9;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
