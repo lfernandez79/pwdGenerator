@@ -14,7 +14,7 @@ body,
 
 h2 {
   text-align: center;
-  color: chocolate;
+  color: rgb(255, 255, 255);
 }
 
 body {
@@ -36,7 +36,7 @@ header {
 }
 
 .card {
-  background-color: hsla(60, 29%, 35%, 0.178);
+  background: linear-gradient(to bottom right, #666699 20%, #669999 80%);
   border-radius: 50px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, .5) 10px 10px 10px .5px;
@@ -49,7 +49,7 @@ header {
 
 .fab {
   color: black;
-  text-align: center;
+  
 }
 
 .card-header::after {
