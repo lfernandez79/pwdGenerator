@@ -16,9 +16,9 @@ function promptUser() {
     numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
     }
 
-    upperCase = confirm("Do you need ABC?");
-    lowerCase = confirm("DO you need abc?");
-    numbers = confirm("Do you need numbers?");
+    upperCase = confirm("Do you want capitalized(ABC?)");
+    lowerCase = confirm("Do you need lowercase (abc?)");
+    numbers = confirm("Do you need 123?");
     specialChar = confirm("Do you need symbols?");
 }
 
