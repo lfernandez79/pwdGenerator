@@ -35,14 +35,14 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  background-color: hsla(60, 29%, 35%, 0.178);
+  border-radius: 50px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, .5) 10px 10px 10px .5px;
+  color: hsl(206, 72%, 55%);
+  font-size: 20px;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
   padding: 30px 40px;
 }
 
@@ -80,8 +80,7 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px  0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;

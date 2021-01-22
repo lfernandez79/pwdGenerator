@@ -1,77 +1,66 @@
 
-
-
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-var numChar;
-var upperCase;
-var lowerCase;
-var numbers;
-var specialChar;
-var password = "";
+let generateBtn = document.querySelector("#generate");
+let numChar;
+let upperCase;
+let lowerCase;
+let numbers;
+let specialChar;
+let password = "";
 
 
 function promptUser() {
     password = "";
     numChar = prompt("How many characters would you like your password to be? (8-128 characters");
     while (numChar < 8 || numChar > 128) {
-    numChar = prompt("Please select the number of characters you would like for your password.");
+    numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
     }
 
     upperCase = confirm("Do you need ABC?");
     lowerCase = confirm("DO you need abc?");
-    numbers = confirm("DO you need numbers?");
+    numbers = confirm("Do you need numbers?");
     specialChar = confirm("Do you need symbols?");
 }
 
-var charSet = [
+let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     "abcdefghijklmnopqrstuvwxyz",
     "0123456789",
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
-];
-console.log(charSet.length);
+]
 
-var charString = "";
+let charString = "";
 
 function selectedChar() {
 
     if (upperCase === true) {
-        charString = charString + charSet[0].toString();
+        charString += charSet[0].toString();
     }
     if (lowerCase === true) {
-        charString = charString + charSet[1].toString();
+        charString += charSet[1].toString();
     }
     if (numbers === true) {
-        charString = charString + charSet[2].toString();
+        charString += charSet[2].toString();
     }
     if (specialChar === true) {
-        charString = charString + charSet[3].toString();
+        charString += charSet[3].toString();
     }
-
 }
 
 function generatePassword() {
-
-    var charArray = charString.split("");
-
+    let charArray = charString.split("");
+    
     for (var i = 0; i < numChar; i++) {
-
-        var random = Math.floor(Math.random() * charString.length);
-        var randomChar = charArray[random];
-
+        let random = Math.floor(Math.random() * charString.length);
+        let randomChar = charArray[random];
+        console.log(randomChar)
         password += randomChar;
-
     }
-
 }
 // Write password to the #password input
 function writePassword() {
-
-    var passwordText = document.querySelector("#password");
-
+    let passwordText = document.querySelector("#password");
     passwordText.value = password;
-
 }
 
 // Add event listeners to generate button
