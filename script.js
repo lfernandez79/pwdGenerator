@@ -62,7 +62,8 @@ function generatePassword() {
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    setTimeout(() => passwordText.remove(), 5000);
+    setTimeout(() => passwordText.style.display = "none", 5000, passwordText.style.display = "initial");
+    
 }
 
 
