@@ -48,6 +48,7 @@ function selectedChar() {
 }
 
 function generatePassword() {
+    
     let charArray = charString.split("");
     
     for (var i = 0; i < numChar; i++) {
@@ -61,10 +62,14 @@ function generatePassword() {
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
+    setTimeout(() => passwordText.remove(), 5000);
 }
+
+
 
 // Add event listeners to generate button
 generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
+
