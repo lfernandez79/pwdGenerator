@@ -57,7 +57,7 @@ function generatePassword() {
         password += randomChar;
     }
 }
-// Write password to the #password input
+// Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;

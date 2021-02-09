@@ -12,7 +12,11 @@ body,
   padding: 0;
 }
 
-h2 {
+p {
+  text-align: left;
+}
+
+h1 {
   text-align: center;
   color: rgb(255, 255, 255);
 }
