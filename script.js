@@ -13,7 +13,7 @@ function promptUser() {
     password = "";
     numChar = prompt("How many characters would you like your password to be? (8-128 characters");
     while (numChar < 8 || numChar > 128) {
-    numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
+        numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
     }
 
     upperCase = confirm("Do you want capitalized(ABC?)");
@@ -48,9 +48,8 @@ function selectedChar() {
 }
 
 function generatePassword() {
-    
     let charArray = charString.split("");
-    
+
     for (var i = 0; i < numChar; i++) {
         let random = Math.floor(Math.random() * charString.length);
         let randomChar = charArray[random];
@@ -63,10 +62,7 @@ function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
     setTimeout(() => passwordText.style.display = "none", 5000, passwordText.style.display = "initial");
-    
 }
-
-
 
 // Add event listeners to generate button
 generateBtn.addEventListener("click", promptUser);
