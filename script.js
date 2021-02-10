@@ -7,6 +7,7 @@ let lowerCase;
 let numbers;
 let specialChar;
 let password = "";
+let secondsLeft = 5;
 
 let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -64,12 +65,16 @@ function writePassword() {
 }
 
 const countDown = () => {
-    let counterText = document.createElement("label");
-    counterText.innerHTML = "Timer Countdown: "
-    document.getElementById("counter").appendChild(counterText);
-    let progressBar = document.createElement("progress");
-    document.getElementById("counter").appendChild(progressBar)
+   let timeInterval = setInterval(() => {
+       secondsLeft--;
+       let counter = document.getElementById("counter")
+       counter.textContent = secondsLeft
+     if(secondsLeft === 0) {
+         clearInterval(timeInterval)
+     }
+   }, 1000)
 }
+
 
 
 // Add event listeners to generate button
