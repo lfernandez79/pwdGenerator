@@ -13,13 +13,14 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <div class="wrapper">
+    <main class="wrapper">
         
-        <div class="card">
-            <div class="card-header">
-                <progress value="0" max="10" id="progressBar"></progress>
+        <section class="card">
+            <header class="card-header">
+                <label for="pwd">Time reminder:</label>
+                <progress id="pwd" value="2" max="10"></progress>
                 <h1>Generate a Password</h1>
-            </div>
+            </header>
             <div class="card-body">
                 <textarea readonly id="password" placeholder="Password"
                     aria-label="Generated Password"></textarea>
@@ -29,9 +30,9 @@
                 
             </div>
             <p><i class="fab fa-angellist fa-2x"></i><p/>
-        </div>
+        </section>
         
-    </div>
+    </main>
     
     <script src="script.js"></script>
 
