@@ -63,9 +63,19 @@ function writePassword() {
     setTimeout(() => passwordText.style.display = "none", 5000, passwordText.style.display = "initial");
 }
 
+const countDown = () => {
+    let counterText = document.createElement("label");
+    counterText.innerHTML = "Timer Countdown: "
+    document.getElementById("counter").appendChild(counterText);
+    let progressBar = document.createElement("progress");
+    document.getElementById("counter").appendChild(progressBar)
+}
+
+
 // Add event listeners to generate button
 generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", countDown);
 
