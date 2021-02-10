@@ -8,6 +8,12 @@ let numbers;
 let specialChar;
 let password = "";
 
+let charSet = [
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "abcdefghijklmnopqrstuvwxyz",
+    "0123456789",
+    "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
+]
 
 function promptUser() {
     password = "";
@@ -21,13 +27,6 @@ function promptUser() {
     numbers = confirm("Do you need 123?");
     specialChar = confirm("Do you need symbols?");
 }
-
-let charSet = [
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "abcdefghijklmnopqrstuvwxyz",
-    "0123456789",
-    "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
-]
 
 let charString = "";
 
@@ -50,7 +49,7 @@ function selectedChar() {
 function generatePassword() {
     let charArray = charString.split("");
 
-    for (var i = 0; i < numChar; i++) {
+    for (let i = 0; i < numChar; i++) {
         let random = Math.floor(Math.random() * charString.length);
         let randomChar = charArray[random];
         console.log(randomChar)
