@@ -61,7 +61,7 @@ function generatePassword() {
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    setTimeout(() => passwordText.style.display = "none", 10000, passwordText.style.display = "initial");
+    setTimeout(() => passwordText.style.display = "none", secondsLeft * 1000, passwordText.style.display = "initial");
 }
 
 const countDown = () => {
