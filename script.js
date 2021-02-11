@@ -7,7 +7,7 @@ let lowerCase;
 let numbers;
 let specialChar;
 let password = "";
-let secondsLeft = 5;
+let secondsLeft = 10;
 
 let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -61,16 +61,17 @@ function generatePassword() {
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    setTimeout(() => passwordText.style.display = "none", 5000, passwordText.style.display = "initial");
+    setTimeout(() => passwordText.style.display = "none", 10000, passwordText.style.display = "initial");
 }
 
 const countDown = () => {
    let timeInterval = setInterval(() => {
        secondsLeft--;
        let counter = document.getElementById("counter")
-       counter.textContent = secondsLeft
-     if(secondsLeft === 0) {
+       counter.innerHTML = secondsLeft + " Seconds left, grab it!" 
+     if(secondsLeft <= 0) {
          clearInterval(timeInterval)
+         counter.innerHTML = "Click to start, again"
      }
    }, 1000)
 }
