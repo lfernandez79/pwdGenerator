@@ -7,7 +7,7 @@ let lowerCase;
 let numbers;
 let specialChar;
 let password = "";
-let secondsLeft = 10;
+let secondsLeft = 5;
 
 let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -61,27 +61,28 @@ function generatePassword() {
 function writePassword() {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    setTimeout(() => passwordText.style.display = "none", secondsLeft * 1000, passwordText.style.display = "initial");
+    
+    let timeInterval = setInterval(() => {
+        secondsLeft--;
+        
+        let counter = document.getElementById("counter")
+        counter.innerHTML = secondsLeft + " Seconds left, grab it!"
+        
+        if (secondsLeft <= 0) {
+            clearInterval(timeInterval)
+            passwordText.style.display = "none"
+            counter.innerHTML = "Click to start, again"
+
+        }
+    }, 1000)
 }
-
-const countDown = () => {
-   let timeInterval = setInterval(() => {
-       secondsLeft--;
-       let counter = document.getElementById("counter")
-       counter.innerHTML = secondsLeft + " Seconds left, grab it!" 
-     if(secondsLeft <= 0) {
-         clearInterval(timeInterval)
-         counter.innerHTML = "Click to start, again"
-     }
-   }, 1000)
-}
-
-
 
 // Add event listeners to generate button
+
 generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
-generateBtn.addEventListener("click", countDown);
+
+
 
