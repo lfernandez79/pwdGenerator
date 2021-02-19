@@ -64,7 +64,6 @@ function writePassword() {
     
     let timeInterval = setInterval(() => {
         secondsLeft--;
-        
         let counter = document.getElementById("counter")
         counter.innerHTML = secondsLeft + " Seconds left, grab it!"
         
