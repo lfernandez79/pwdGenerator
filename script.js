@@ -16,7 +16,7 @@ let charSet = [
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ]
 
-function promptUser() {
+const promptUser = () => {
     password = "";
     numChar = prompt("How many characters would you like your password to be? (8-128 characters");
     while (numChar < 8 || numChar > 128) {
@@ -31,7 +31,7 @@ function promptUser() {
 
 let charString = "";
 
-function selectedChar() {
+const selectedChar = () => {
 
     if (upperCase === true) {
         charString += charSet[0].toString();
@@ -47,7 +47,7 @@ function selectedChar() {
     }
 }
 
-function generatePassword() {
+const generatePassword = () => {
     let charArray = charString.split("");
 
     for (let i = 0; i < numChar; i++) {
@@ -58,7 +58,7 @@ function generatePassword() {
     }
 }
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
-function writePassword() {
+const writePassword = () => {
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
     
