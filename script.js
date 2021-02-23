@@ -1,6 +1,7 @@
 
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
+let resetBtn = document.getElementById("reset")
 let numChar;
 let upperCase;
 let lowerCase;
@@ -70,10 +71,13 @@ const writePassword = () => {
         if (secondsLeft <= 0) {
             clearInterval(timeInterval)
             passwordText.style.display = "none"
-            counter.innerHTML = "Click to start, again"
-
+            counter.innerHTML = "Click reset button to start again"
         }
     }, 1000)
+}
+
+const reload = () => {
+    location.reload()
 }
 
 // Add event listeners to generate button
@@ -82,6 +86,6 @@ generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
-
+resetBtn.addEventListener("click", reload)
 
 
