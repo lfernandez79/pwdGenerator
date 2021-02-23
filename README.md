@@ -10,7 +10,7 @@ Javascript web-app that creates a random password based on user-selected criteri
 
 ## Technology
 ```
-Vanilla HTML and CSS powered by JavaScript.
+Vanilla HTML, CSS, Boostrap by JavaScript.
 ```
 
 
