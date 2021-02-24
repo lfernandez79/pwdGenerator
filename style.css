@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -146,4 +146,9 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+} */
+
+
+.ui.buttons {
+  margin-top: 10px;
 }

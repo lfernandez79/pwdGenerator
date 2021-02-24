@@ -13,7 +13,8 @@ Javascript web-app that creates a random password based on user-selected criteri
 ```sh
 HTML
 CSS
-Boostrap 
+Boostrap
+Semantic UI
 Vanilla JavaScript
 ```
 ### Features 
