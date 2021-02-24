@@ -23,7 +23,7 @@ const promptUser = () => {
     while (numChar < 8 || numChar > 128) {
         numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
     }
-
+    generateBtn.disabled = true;
     upperCase = confirm("Do you want capitalized(ABC?)");
     lowerCase = confirm("Do you need lowercase (abc?)");
     numbers = confirm("Do you need 123?");
