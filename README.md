@@ -9,16 +9,17 @@ Javascript web-app that creates a random password based on user-selected criteri
 # [Launch it!](https://lfernandez79.github.io/pwdGenerator/)
 
 ## Technology
+
 ```sh
-    HTML
-    CSS
-    Boostrap 
-    Vanilla JavaScript. 
+HTML
+CSS
+Boostrap 
+Vanilla JavaScript
 ```
 ### Features 
-    - Timer
-    - Fontawesome
-    - Favicon
+* Timer
+* Fontawesome
+* Favicon
 
 ### Application
 
@@ -28,4 +29,3 @@ Javascript web-app that creates a random password based on user-selected criteri
 * Move it to AWS or Heroku
 * CI/CD with Travis
 * Wrapped with ReactJS
-
