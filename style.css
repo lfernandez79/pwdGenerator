@@ -147,3 +147,8 @@ button[disabled] {
     font-size: 0.8rem;
   }
 } */
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  
+  background-color: rgb(81, 206, 77);
+}
