@@ -2,6 +2,7 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 let resetBtn = document.getElementById("reset")
+let toggleBtn = document.getElementById("customSwitch1")
 let numChar;
 let upperCase;
 let lowerCase;
@@ -30,6 +31,11 @@ const promptUser = () => {
     specialChar = confirm("Do you need symbols?");
 }
 
+const mayuscula = () => {
+    
+}
+toggleBtn.addEventListener("change", mayuscula);
+
 let charString = "";
 
 const selectedChar = () => {
@@ -50,7 +56,7 @@ const selectedChar = () => {
 
 const generatePassword = () => {
     let charArray = charString.split("");
-
+ 
     for (let i = 0; i < numChar; i++) {
         let random = Math.floor(Math.random() * charString.length);
         let randomChar = charArray[random];
