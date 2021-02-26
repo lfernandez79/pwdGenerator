@@ -36,10 +36,9 @@ let specialChar;
 
 const selectedChar = () => {
 
-    // if (upperCase === true) {
-    //     charString += charSet[0].toString();
-        
-    // }
+    if (upperCase === true) {
+        charString += charSet[0].toString();  
+    }
     if (lowerCase === true) {
         charString += charSet[1].toString();
     }
@@ -51,11 +50,14 @@ const selectedChar = () => {
     }
 }
 
-const charSelection = () => {
+const charSelecUpper = () => {
     if(toggleBtnUpper.checked === true) {
         charString = charSet[0].toString()
         console.log(charString)
     } 
+}
+
+const charSelectLower = () => {
     if(toggleBtnLower.checked === true) {
         charString = charSet[1].toString()
         console.log(charString)
@@ -101,8 +103,8 @@ generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
-toggleBtnUpper.addEventListener("change", charSelection)
-toggleBtnLower.addEventListener("change", charSelection)
+toggleBtnUpper.addEventListener("change", charSelecUpper)
+toggleBtnLower.addEventListener("change", charSelectLower)
 resetBtn.addEventListener("click", reload)
 
 
