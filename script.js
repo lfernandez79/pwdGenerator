@@ -61,28 +61,28 @@ slider.oninput = () => {
 
 const charSelecUpper = () => {
     if(toggleBtnUpper.checked === true) {
-        charString = charSet[0].toString()
+        charString += charSet[0].toString()
         console.log(charString)
     } 
 }
 
 const charSelectLower = () => {
     if(toggleBtnLower.checked === true) {
-        charString = charSet[1].toString()
+        charString += charSet[1].toString()
         console.log(charString)
     }
 }
 
 const num = () => {
-    if (toggleBtnLower.checked === true) {
-        charString = charSet[2].toString()
+    if (toggleBtnNum.checked === true) {
+        charString += charSet[2].toString()
         console.log(charString)
     }
 }
 
 const symbols = () => {
-    if (toggleBtnLower.checked === true) {
-        charString = charSet[3].toString()
+    if (toggleBtnSymb.checked === true) {
+        charString += charSet[3].toString()
         console.log(charString)
     }
 }
@@ -91,12 +91,13 @@ let password = "";
 const generatePassword = () => {
     let charArray = charString.split("");
  
-    for (let i = 0; i < numChar; i++) {
+    for (let i = 0; i < slider.value; i++) {
         let random = Math.floor(Math.random() * charString.length);
         let randomChar = charArray[random];
         password += randomChar;
         console.log(password)
     }
+    generateBtn.disabled = true;
 }
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
