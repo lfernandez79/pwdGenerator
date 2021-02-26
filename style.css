@@ -1,7 +1,4 @@
 
-#toggles{
-  margin: 15px;
-}
 
 .custom-control-input:checked ~ .custom-control-label::before {
   

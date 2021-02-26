@@ -2,13 +2,8 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 let resetBtn = document.getElementById("reset")
-let toggleBtn = document.getElementById("customSwitch1")
-let numChar;
-let upperCase;
-let lowerCase;
-let numbers;
-let specialChar;
-let password = "";
+let toggleBtnUpper = document.getElementById("customSwitch1")
+let toggleBtnLower = document.getElementById("customSwitch2")
 let secondsLeft = 5;
 
 let charSet = [
@@ -18,6 +13,7 @@ let charSet = [
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ]
 
+let numChar;
 const promptUser = () => {
     password = "";
     numChar = prompt("How many characters would you like your password to be? (8-128 characters");
@@ -31,18 +27,19 @@ const promptUser = () => {
     specialChar = confirm("Do you need symbols?");
 }
 
-const mayuscula = () => {
-    
-}
-toggleBtn.addEventListener("change", mayuscula);
 
 let charString = "";
+let upperCase;
+let lowerCase;
+let numbers;
+let specialChar;
 
 const selectedChar = () => {
 
-    if (upperCase === true) {
-        charString += charSet[0].toString();
-    }
+    // if (upperCase === true) {
+    //     charString += charSet[0].toString();
+        
+    // }
     if (lowerCase === true) {
         charString += charSet[1].toString();
     }
@@ -54,6 +51,18 @@ const selectedChar = () => {
     }
 }
 
+const charSelection = () => {
+    if(toggleBtnUpper.checked === true) {
+        charString = charSet[0].toString()
+        console.log(charString)
+    } 
+    if(toggleBtnLower.checked === true) {
+        charString = charSet[1].toString()
+        console.log(charString)
+    }
+}
+
+let password = "";
 const generatePassword = () => {
     let charArray = charString.split("");
  
@@ -92,6 +101,8 @@ generateBtn.addEventListener("click", promptUser);
 generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
+toggleBtnUpper.addEventListener("change", charSelection)
+toggleBtnLower.addEventListener("change", charSelection)
 resetBtn.addEventListener("click", reload)
 
 
