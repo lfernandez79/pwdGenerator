@@ -5,8 +5,8 @@
   background-color: rgb(81, 206, 77);
 }
 
-label {
-  font-size: 16px;
+label, p{
+  font-size: 20px;
 }
 
 .custom-range {

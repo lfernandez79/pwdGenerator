@@ -27,38 +27,39 @@
             <div class="">
                 <textarea class="text-center" readonly id="password" placeholder="Password" aria-label="Generated Password" rows="1" cols="50"></textarea>
                 
-                <fieldset class="form-group">
-                    <p>Characters: <span id="sliderCounter"></span></p>
+                <fieldset>
+                    <p>Num of characters: <span id="sliderCounter"></span></p>
                     <label for="customRange1">Use slider to pick number of characters?</label>
                     <input type="range" class="custom-range" id="customRange1" min="8" max="30" value="8">
                 </fieldset>
-                
-                <div class="my-3 custom-control custom-switch">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-3 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="customSwitch1">
                     <label class="custom-control-label" for="customSwitch1">UPPER CASE?</label>
                 </div>
-                <div class="my-3 custom-control custom-switch">
+                <div class="col-sm-3 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="customSwitch2">
                     <label class="custom-control-label" for="customSwitch2">lower case?</label>
                 </div>
-                <div class="my-3 custom-control custom-switch">
+                <div class="col-sm-3 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="customSwitch3">
                     <label class="custom-control-label" for="customSwitch3">123?</label>
                 </div>
-                <div class="my-3 custom-control custom-switch">
+                <div class="col-sm-3 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="customSwitch4">
                     <label class="custom-control-label" for="customSwitch4">symbols?</label>
                 </div>
             </div>
         </section>
         
-        <div class="">
+        <div class="row justify-content-center">
             <button type="button" id="generate" class="btn btn-primary">Click to start!</button>
             <button type="button" id="reset" class="btn btn-primary btn-sm btn-warning">Reset</button>
         </div>
 
         <footer class="">  
-                    <p class="text-left"><i class="fab fa-angellist fa-2x"></i></p>
+            <p class="text-left"><i class="fab fa-angellist fa-2x"></i></p>
         </footer>
             
     </main> 

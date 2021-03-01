@@ -66,6 +66,8 @@ const generatePassword = () => {
 }
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
+    
+    
     let passwordText = document.getElementById("password");
     passwordText.value = password;
     
@@ -86,10 +88,6 @@ const reload = () => {
     location.reload()
 }
 
-// Add event listeners to generate button
-
-// generateBtn.addEventListener("click", promptUser);
-// generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
 toggleBtnUpper.addEventListener("change", charSelecUpper)
