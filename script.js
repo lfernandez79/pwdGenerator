@@ -8,7 +8,7 @@ let toggleBtnUpper = document.getElementById("customSwitch1")
 let toggleBtnLower = document.getElementById("customSwitch2")
 let toggleBtnNum = document.getElementById("customSwitch3")
 let toggleBtnSymb = document.getElementById("customSwitch4")
-let secondsLeft = 5;
+let secondsLeft = 8;
 
 let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -17,42 +17,12 @@ let charSet = [
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ]
 
-// let numChar;
-// const promptUser = () => {
-//     password = "";
-//     numChar = prompt("How many characters would you like your password to be? (8-128 characters");
-//     while (numChar < 8 || numChar > 128) {
-//         numChar = prompt("Please add number between 8-128 only, nothing less, nothing more");
-//     }
-//     generateBtn.disabled = true;
-//     upperCase = confirm("Do you want capitalized(ABC?)");
-//     lowerCase = confirm("Do you need lowercase (abc?)");
-//     numbers = confirm("Do you need 123?");
-//     specialChar = confirm("Do you need symbols?");
-// }
-
-
 let charString = "";
 let upperCase;
 let lowerCase;
 let numbers;
 let specialChar;
 
-// const selectedChar = () => {
-
-//     if (upperCase === true) {
-//         charString += charSet[0].toString();  
-//     }
-//     if (lowerCase === true) {
-//         charString += charSet[1].toString();
-//     }
-//     if (numbers === true) {
-//         charString += charSet[2].toString();
-//     }
-//     if (specialChar === true) {
-//         charString += charSet[3].toString();
-//     }
-// }
 
 output.innerHTML = slider.value ;
 slider.oninput = () => {
@@ -101,7 +71,7 @@ const generatePassword = () => {
 }
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
-    let passwordText = document.querySelector("#password");
+    let passwordText = document.getElementById("password");
     passwordText.value = password;
     
     let timeInterval = setInterval(() => {
@@ -126,7 +96,7 @@ const reload = () => {
 // generateBtn.addEventListener("click", promptUser);
 // generateBtn.addEventListener("click", selectedChar);
 generateBtn.addEventListener("click", generatePassword);
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 toggleBtnUpper.addEventListener("change", charSelecUpper)
 toggleBtnLower.addEventListener("change", charSelectLower)
 toggleBtnNum.addEventListener("change", num)
