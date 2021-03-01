@@ -8,7 +8,7 @@ let toggleBtnUpper = document.getElementById("customSwitch1")
 let toggleBtnLower = document.getElementById("customSwitch2")
 let toggleBtnNum = document.getElementById("customSwitch3")
 let toggleBtnSymb = document.getElementById("customSwitch4")
-let secondsLeft = 8;
+let secondsLeft = 10;
 
 let charSet = [
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -69,7 +69,7 @@ const writePassword = () => {
     
     
     let passwordText = document.getElementById("password");
-    passwordText.value = password;
+    passwordText.innerHTML = password;
     
     let timeInterval = setInterval(() => {
         secondsLeft--;

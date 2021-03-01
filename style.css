@@ -9,6 +9,11 @@ label, p {
   font-size: 20px;
 }
 
+#password {
+  font-size: 2em;
+  color: #D2691E;
+}
+
 .custom-range {
   width: 30%;
   height: auto;
@@ -16,5 +21,5 @@ label, p {
 
 main {
 margin-top: 5%;
-
+box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 }
