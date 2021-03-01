@@ -6,5 +6,10 @@
 }
 
 label {
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.custom-range {
+  width: 30%;
+  height: auto;
 }

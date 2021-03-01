@@ -17,18 +17,13 @@ let charSet = [
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ]
 
-let charString = "";
-let upperCase;
-let lowerCase;
-let numbers;
-let specialChar;
-
-
-output.innerHTML = slider.value ;
+output.innerHTML = slider.value;
 slider.oninput = () => {
     output.innerHTML = slider.value
 }
 
+
+let charString = "";
 const charSelecUpper = () => {
     if(toggleBtnUpper.checked === true) {
         charString += charSet[0].toString()
