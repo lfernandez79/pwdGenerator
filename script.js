@@ -8,6 +8,7 @@ let toggleBtnUpper = document.getElementById("customSwitch1")
 let toggleBtnLower = document.getElementById("customSwitch2")
 let toggleBtnNum = document.getElementById("customSwitch3")
 let toggleBtnSymb = document.getElementById("customSwitch4")
+let hsimp = document.getElementsByClassName("hsimp")
 let secondsLeft = 10;
 
 let charSet = [
@@ -64,13 +65,13 @@ const generatePassword = () => {
     }
     generateBtn.disabled = true;
 }
+
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
     
-    
     let passwordText = document.getElementById("password");
     passwordText.innerHTML = password;
-    
+
     let timeInterval = setInterval(() => {
         secondsLeft--;
         let counter = document.getElementById("counter")
