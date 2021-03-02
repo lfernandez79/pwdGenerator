@@ -11,6 +11,7 @@ label, p {
 
 #password {
   font-size: 2em;
+  font-weight: bolder;
   color: #D2691E;
 }
 
