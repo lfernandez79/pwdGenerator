@@ -1,0 +1,22 @@
+{
+  "name": "pwdgenerator",
+  "version": "1.0.0",
+  "description": "Password Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfernandez79/pwdGenerator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lfernandez79/pwdGenerator/issues"
+  },
+  "homepage": "https://github.com/lfernandez79/pwdGenerator#readme",
+  "dependencies": {
+    "netlify-cli": "^3.10.3"
+  }
+}
