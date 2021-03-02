@@ -24,9 +24,11 @@ Vanilla JavaScript
 * Removed old alert questions for toggles.
 * Complete migration to ES6
 
-### Application
+| Dated app    | New and Improved => ES6 |
+| -------------| ------------------------|
+| v1           | v2                      |
+| <img src="./image/PG.png" width="350"> | <img src="./image/PG2.png" width="350">|
 
-![password generator](./image/PG.png)
 
 #### Future
 * Move it to AWS or Heroku
