@@ -4,7 +4,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/lfernandez79/pwdGenerator?color=orange&logo=javascript)
 ![GitHub commit merge status](https://img.shields.io/github/commit-status/lfernandez79/pwdGenerator/master/d65997ca00043d42e1fb834c57fa22cde8b9e339)
 
-Javascript web-app that creates a random password based on user-selected criteria. This app runs in the browser and mobile devices feature dynamically updated. Clean and polished user interface and responsive.
+Re-new and improved Javascript web-app that creates a random password based on user-selected criteria. This app runs in the browser and mobile devices feature dynamically updated. Clean and polished user interface and responsive. 
 
 # [Launch it!](https://lfernandez79.github.io/pwdGenerator/)
 
@@ -14,19 +14,22 @@ Javascript web-app that creates a random password based on user-selected criteri
 HTML
 CSS
 Boostrap
-Semantic UI
+Bootswatch
 Vanilla JavaScript
 ```
 ### Features 
 * Timer
 * Fontawesome
 * Favicon
+* Removed old alert questions for toggles.
+* Complete migration to ES6
 
 ### Application
 
-![password generator](./Assets/PG.png)
+![password generator](./image/PG.png)
 
 #### Future
 * Move it to AWS or Heroku
 * CI/CD with Travis
 * Wrapped with ReactJS
+* Enable hsimp
