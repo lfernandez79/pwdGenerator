@@ -27,7 +27,7 @@ Vanilla JavaScript
 | Dated app    | New and Improved => ES6 | Mobile device |
 | -------------| ------------------------|---------------|
 | v1           | v2                      | v2            |
-| <img src="./image/PG.png" width="350"> | <img src="./image/PG2.png" width="350">| <img src="./image/PGmobile.png" width="150">|
+| <img src="./image/PG.png" width="350"> | <img src="./image/PG2.png" width="350">| <img src="./image/mobilePG.png" width="150">|
 
 
 #### Future
