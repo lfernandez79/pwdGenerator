@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lfernandez79/pwdGenerator/issues"
   },
-  "homepage": "https://github.com/lfernandez79/pwdGenerator#readme"
+  "homepage": "https://github.com/lfernandez79/pwdGenerator#readme",
+  "dependencies": {
+    "netlify-cli": "^3.10.3"
+  }
 }
