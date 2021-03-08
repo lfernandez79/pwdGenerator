@@ -34,5 +34,5 @@ Vanilla JavaScript
 
 
 #### Future
-* Enable MVC
+* Enable PWA
 * Enable hsimp
