@@ -34,5 +34,5 @@ Vanilla JavaScript
 
 
 #### Future
-* Wrapped with ReactJS
+* Enable MVC
 * Enable hsimp
