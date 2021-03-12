@@ -18,3 +18,4 @@ const FILES_TO_CACHE = [
     "/public/assets/image/icons/favicon_io/site.webmanifest",
 
 ];
+
