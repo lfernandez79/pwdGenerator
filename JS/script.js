@@ -23,66 +23,84 @@ slider.oninput = () => {
     output.innerHTML = slider.value
 }
 
+generateBtn.disabled = true;
 
 let charString = "";
 const charSelecUpper = () => {
-    if(toggleBtnUpper.checked === true) {
-        charString += charSet[0].toString()
+    if (toggleBtnUpper.checked) {
+        generateBtn.disabled = false;
+        charString += charSet[0]
         console.log(charString)
     } 
+    else if(!toggleBtnUpper.checked) {
+        generateBtn.disabled = true;
+    }
 }
 
 const charSelectLower = () => {
-    if(toggleBtnLower.checked === true) {
+    if (toggleBtnLower.checked) {
+        generateBtn.disabled = false;
         charString += charSet[1].toString()
         console.log(charString)
+    }
+    else if (!toggleBtnLower.checked) {
+        generateBtn.disabled = true;
     }
 }
 
 const num = () => {
-    if (toggleBtnNum.checked === true) {
+    if (toggleBtnNum.checked) {
+        generateBtn.disabled = false;
         charString += charSet[2].toString()
         console.log(charString)
+    }
+    else if (!toggleBtnNum.checked) {
+        generateBtn.disabled = true;
     }
 }
 
 const symbols = () => {
-    if (toggleBtnSymb.checked === true) {
+    if (toggleBtnSymb.checked) {
+        generateBtn.disabled = false;
         charString += charSet[3].toString()
         console.log(charString)
+    }
+    else if (!toggleBtnSymb.checked) {
+        generateBtn.disabled = true;
     }
 }
 
 let password = "";
 const generatePassword = () => {
-    let charArray = charString.split("");
- 
-    for (let i = 0; i < slider.value; i++) {
-        let random = Math.floor(Math.random() * charString.length);
-        let randomChar = charArray[random];
-        password += randomChar;
-        console.log(password)
-    }
-    generateBtn.disabled = true;
+
+        let charArray = charString.split("");
+
+        for (let i = 0; i < slider.value; i++) {
+            let random = Math.floor(Math.random() * charString.length);
+            let randomChar = charArray[random];
+            password += randomChar;
+            console.log(password)
+        }
 }
 
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
     
     let passwordText = document.getElementById("password");
+    
     passwordText.innerHTML = password;
-
     let timeInterval = setInterval(() => {
         secondsLeft--;
         let counter = document.getElementById("counter")
         counter.innerHTML = secondsLeft + " Seconds left, grab it!"
-        
+
         if (secondsLeft <= 0) {
             clearInterval(timeInterval)
             passwordText.style.display = "none"
             counter.innerHTML = "Click reset button to start again"
         }
     }, 1000)
+  
 }
 
 const reload = () => {
