@@ -1,14 +1,14 @@
 
 // Assignment Code
-let generateBtn = document.querySelector("#generate");
-let resetBtn = document.getElementById("reset")
-let slider = document.getElementById("customRange1")
-let output = document.getElementById("sliderCounter")
-let toggleBtnUpper = document.getElementById("customSwitch1")
-let toggleBtnLower = document.getElementById("customSwitch2")
-let toggleBtnNum = document.getElementById("customSwitch3")
-let toggleBtnSymb = document.getElementById("customSwitch4")
-let hsimp = document.getElementsByClassName("hsimp")
+const generateBtn = document.querySelector("#generate");
+const resetBtn = document.getElementById("reset")
+const slider = document.getElementById("customRange1")
+const output = document.getElementById("sliderCounter")
+const toggleBtnUpper = document.getElementById("customSwitch1")
+const toggleBtnLower = document.getElementById("customSwitch2")
+const toggleBtnNum = document.getElementById("customSwitch3")
+const toggleBtnSymb = document.getElementById("customSwitch4")
+const hsimp = document.getElementsByClassName("hsimp")
 let secondsLeft = 10;
 
 let charSet = [
@@ -18,18 +18,19 @@ let charSet = [
     "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
 ]
 
-output.innerHTML = slider.value;
+output.textContent = slider.value;
 slider.oninput = () => {
-    output.innerHTML = slider.value
+    output.textContent = slider.value
 }
 
 
 let charString = "";
+
 const charSelecUpper = () => {
     if(toggleBtnUpper.checked === true) {
         charString += charSet[0].toString()
         console.log(charString)
-    } 
+    }
 }
 
 const charSelectLower = () => {
@@ -54,39 +55,51 @@ const symbols = () => {
 }
 
 let password = "";
+
 const generatePassword = () => {
-    let charArray = charString.split("");
- 
-    for (let i = 0; i < slider.value; i++) {
-        let random = Math.floor(Math.random() * charString.length);
-        let randomChar = charArray[random];
-        password += randomChar;
-        console.log(password)
-    }
-    generateBtn.disabled = true;
-}
+  if (charString === "") {
+    alert("Please select at least one character type to generate a password");
+    location.reload();
+  }
+
+  const charArray = charString.split("");
+
+  for (let i = 0; i < slider.value; i++) {
+    const random = Math.floor(Math.random() * charString.length);
+    const randomChar = charArray[random];
+    password += randomChar;
+    console.log(password);
+  }
+  generateBtn.disabled = true;
+};
 
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
     
-    let passwordText = document.getElementById("password");
-    passwordText.innerHTML = password;
+    const passwordText = document.getElementById("password");
+    passwordText.textContent = password;
 
     let timeInterval = setInterval(() => {
         secondsLeft--;
-        let counter = document.getElementById("counter")
-        counter.innerHTML = secondsLeft + " Seconds left, grab it!"
+        const counter = document.getElementById("counter")
+        counter.textContent = secondsLeft + " Seconds left, grab it!"
         
-        if (secondsLeft <= 0) {
+        if (secondsLeft <= 0 || charString === "") {
             clearInterval(timeInterval)
             passwordText.style.display = "none"
-            counter.innerHTML = "Click reset button to start again"
+            counter.textContent = "Click reset button to start again"
         }
     }, 1000)
 }
 
+const resetVariables = () => {
+    charString = "";
+    password = "";
+  }
+
 const reload = () => {
-    location.reload()
+    resetVariables();
+    location.reload();
 }
 
 generateBtn.addEventListener("click", generatePassword);
