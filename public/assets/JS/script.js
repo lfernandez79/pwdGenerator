@@ -30,13 +30,19 @@ const charSelecUpper = () => {
     if(toggleBtnUpper.checked === true) {
         charString += charSet[0].toString()
         console.log(charString)
-    }
+    } else {
+        charString = charString.replace(charSet[0], "");
+        console.log(charString);
+      }
 }
 
 const charSelectLower = () => {
     if(toggleBtnLower.checked === true) {
         charString += charSet[1].toString()
         console.log(charString)
+    } else {
+        charString = charString.replace(charSet[1], "");
+        console.log(charString);
     }
 }
 
@@ -45,12 +51,17 @@ const num = () => {
         charString += charSet[2].toString()
         console.log(charString)
     }
+    else {
+        charString = charString.replace(charSet[2], "");
+    }
 }
 
 const symbols = () => {
     if (toggleBtnSymb.checked === true) {
         charString += charSet[3].toString()
         console.log(charString)
+    } else {
+        charString = charString.replace(charSet[3], "");
     }
 }
 
@@ -104,10 +115,8 @@ const reload = () => {
 
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
-toggleBtnUpper.addEventListener("change", charSelecUpper)
-toggleBtnLower.addEventListener("change", charSelectLower)
-toggleBtnNum.addEventListener("change", num)
-toggleBtnSymb.addEventListener("change", symbols)
-resetBtn.addEventListener("click", reload)
-
-
+toggleBtnUpper.addEventListener("change", charSelecUpper);
+toggleBtnLower.addEventListener("change", charSelectLower);
+toggleBtnNum.addEventListener("change", num);
+toggleBtnSymb.addEventListener("change", symbols);
+resetBtn.addEventListener("click", reload);
