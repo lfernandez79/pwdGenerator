@@ -1,69 +1,66 @@
-
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
-const resetBtn = document.getElementById("reset")
-const slider = document.getElementById("customRange1")
-const output = document.getElementById("sliderCounter")
-const toggleBtnUpper = document.getElementById("customSwitch1")
-const toggleBtnLower = document.getElementById("customSwitch2")
-const toggleBtnNum = document.getElementById("customSwitch3")
-const toggleBtnSymb = document.getElementById("customSwitch4")
-const hsimp = document.getElementsByClassName("hsimp")
+const resetBtn = document.getElementById("reset");
+const slider = document.getElementById("customRange1");
+const output = document.getElementById("sliderCounter");
+const toggleBtnUpper = document.getElementById("customSwitch1");
+const toggleBtnLower = document.getElementById("customSwitch2");
+const toggleBtnNum = document.getElementById("customSwitch3");
+const toggleBtnSymb = document.getElementById("customSwitch4");
+const hsimp = document.getElementsByClassName("hsimp");
 let secondsLeft = 10;
 
 let charSet = [
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "abcdefghijklmnopqrstuvwxyz",
-    "0123456789",
-    "~!@#$%^&*()_+-=,.<>/?;:[]{}\|",
-]
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "abcdefghijklmnopqrstuvwxyz",
+  "0123456789",
+  "~!@#$%^&*()_+-=,.<>/?;:[]{}|",
+];
 
 output.textContent = slider.value;
 slider.oninput = () => {
-    output.textContent = slider.value
-}
-
+  output.textContent = slider.value;
+};
 
 let charString = "";
 
 const charSelecUpper = () => {
-    if(toggleBtnUpper.checked === true) {
-        charString += charSet[0].toString()
-        console.log(charString)
-    } else {
-        charString = charString.replace(charSet[0], "");
-        console.log(charString);
-      }
-}
+  if (toggleBtnUpper.checked === true) {
+    charString += charSet[0].toString();
+    console.log(charString);
+  } else {
+    charString = charString.replace(charSet[0], "");
+    console.log(charString);
+  }
+};
 
 const charSelectLower = () => {
-    if(toggleBtnLower.checked === true) {
-        charString += charSet[1].toString()
-        console.log(charString)
-    } else {
-        charString = charString.replace(charSet[1], "");
-        console.log(charString);
-    }
-}
+  if (toggleBtnLower.checked === true) {
+    charString += charSet[1].toString();
+    console.log(charString);
+  } else {
+    charString = charString.replace(charSet[1], "");
+    console.log(charString);
+  }
+};
 
 const num = () => {
-    if (toggleBtnNum.checked === true) {
-        charString += charSet[2].toString()
-        console.log(charString)
-    }
-    else {
-        charString = charString.replace(charSet[2], "");
-    }
-}
+  if (toggleBtnNum.checked === true) {
+    charString += charSet[2].toString();
+    console.log(charString);
+  } else {
+    charString = charString.replace(charSet[2], "");
+  }
+};
 
 const symbols = () => {
-    if (toggleBtnSymb.checked === true) {
-        charString += charSet[3].toString()
-        console.log(charString)
-    } else {
-        charString = charString.replace(charSet[3], "");
-    }
-}
+  if (toggleBtnSymb.checked === true) {
+    charString += charSet[3].toString();
+    console.log(charString);
+  } else {
+    charString = charString.replace(charSet[3], "");
+  }
+};
 
 let password = "";
 
@@ -86,32 +83,31 @@ const generatePassword = () => {
 
 // Write password to the #password input then after 5 sec password is removed, then clear to original value "empty" and ready to generate another password
 const writePassword = () => {
-    
-    const passwordText = document.getElementById("password");
-    passwordText.textContent = password;
+  const passwordText = document.getElementById("password");
+  passwordText.textContent = password;
 
-    let timeInterval = setInterval(() => {
-        secondsLeft--;
-        const counter = document.getElementById("counter")
-        counter.textContent = secondsLeft + " Seconds left, grab it!"
-        
-        if (secondsLeft <= 0 || charString === "") {
-            clearInterval(timeInterval)
-            passwordText.style.display = "none"
-            counter.textContent = "Click reset button to start again"
-        }
-    }, 1000)
-}
+  let timeInterval = setInterval(() => {
+    secondsLeft--;
+    const counter = document.getElementById("counter");
+    counter.textContent = secondsLeft + " Seconds left, grab it!";
+
+    if (secondsLeft <= 0 || charString === "") {
+      clearInterval(timeInterval);
+      passwordText.style.display = "none";
+      counter.textContent = "Click reset button to start again";
+    }
+  }, 1000);
+};
 
 const resetVariables = () => {
-    charString = "";
-    password = "";
-  }
+  charString = "";
+  password = "";
+};
 
 const reload = () => {
-    resetVariables();
-    location.reload();
-}
+  resetVariables();
+  location.reload();
+};
 
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
