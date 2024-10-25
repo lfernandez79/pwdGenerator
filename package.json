@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/lfernandez79/pwdGenerator#readme",
   "dependencies": {
-    "netlify-cli": "^3.10.3"
+    "netlify-cli": "^17.37.1"
   }
 }
