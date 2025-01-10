@@ -20,5 +20,8 @@
     "nanoid": "^5.0.9",
     "netlify-cli": "^18.0.0",
     "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=14.15.0"
   }
 }
