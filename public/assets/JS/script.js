@@ -67,16 +67,16 @@ let password = "";
 const generatePassword = () => {
   if (charString === "") {
     alert("Please select at least one character type to generate a password");
-    location.reload();
+    return;
   }
 
   const charArray = charString.split("");
+  const randomValues = new Uint32Array(Number(slider.value));
+  crypto.getRandomValues(randomValues);
 
   for (let i = 0; i < slider.value; i++) {
-    const random = Math.floor(Math.random() * charString.length);
-    const randomChar = charArray[random];
+    const randomChar = charArray[randomValues[i] % charArray.length];
     password += randomChar;
-    console.log(password);
   }
   generateBtn.disabled = true;
 };
