@@ -29,18 +29,16 @@ Uses Python's built-in HTTP server (no Node required):
 - Merging to `master` triggers an automatic Netlify deploy
 - Remote: git@github.com:lfernandez79/pwdGenerator.git (SSH)
 
-## Known audit items (pending)
-- [ ] Remove `console.log` statements from script.js
-- [ ] Migrate to ES Modules (`type="module"`)
-- [ ] Add copy-to-clipboard via `navigator.clipboard.writeText()`
-- [ ] Remove dead code: `hsimp.min.js` loaded but never used
-- [ ] Add `netlify.toml` for cache/security headers
-- [ ] Fix fragile charString charset management (replace with array/Set)
-- [ ] Add ARIA attributes for accessibility
-- [ ] Complete or remove PWA manifest/service worker
-
 ## Completed improvements
 - [x] Replace `Math.random()` with `crypto.getRandomValues()` for secure generation
 - [x] Fix empty selection guard — `return` early instead of `location.reload()`
 - [x] Add `.claude/` to `.gitignore`
 - [x] Remove unused `package.json` and `package-lock.json`
+- [x] Remove `console.log` statements from script.js
+- [x] Remove dead code: `hsimp.min.js` (references and file)
+- [x] Fix fragile charString charset management (replaced with Set-based approach)
+- [x] Add copy-to-clipboard via `navigator.clipboard.writeText()`
+- [x] Migrate to ES Modules (`type="module"`)
+- [x] Add `netlify.toml` for cache/security headers
+- [x] Add ARIA attributes for accessibility
+- [x] Clean up PWA manifest (removed broken duplicate `site.webmanifest`)
