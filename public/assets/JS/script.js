@@ -7,9 +7,10 @@ const toggleBtnUpper = document.getElementById("customSwitch1");
 const toggleBtnLower = document.getElementById("customSwitch2");
 const toggleBtnNum = document.getElementById("customSwitch3");
 const toggleBtnSymb = document.getElementById("customSwitch4");
+const copyBtn = document.getElementById("copy");
 let secondsLeft = 10;
 
-let charSet = [
+const charSets = [
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   "abcdefghijklmnopqrstuvwxyz",
   "0123456789",
@@ -21,49 +22,30 @@ slider.oninput = () => {
   output.textContent = slider.value;
 };
 
-let charString = "";
+const selectedSets = new Set();
 
-const charSelecUpper = () => {
-  if (toggleBtnUpper.checked === true) {
-    charString += charSet[0].toString();
-  } else {
-    charString = charString.replace(charSet[0], "");
-  }
-};
-
-const charSelectLower = () => {
-  if (toggleBtnLower.checked === true) {
-    charString += charSet[1].toString();
-  } else {
-    charString = charString.replace(charSet[1], "");
-  }
-};
-
-const num = () => {
-  if (toggleBtnNum.checked === true) {
-    charString += charSet[2].toString();
-  } else {
-    charString = charString.replace(charSet[2], "");
-  }
-};
-
-const symbols = () => {
-  if (toggleBtnSymb.checked === true) {
-    charString += charSet[3].toString();
-  } else {
-    charString = charString.replace(charSet[3], "");
-  }
+const toggleCharSet = (index) => {
+  return () => {
+    if (selectedSets.has(index)) {
+      selectedSets.delete(index);
+    } else {
+      selectedSets.add(index);
+    }
+  };
 };
 
 let password = "";
 
 const generatePassword = () => {
-  if (charString === "") {
+  if (selectedSets.size === 0) {
     alert("Please select at least one character type to generate a password");
     return;
   }
 
-  const charArray = charString.split("");
+  const charPool = charSets
+    .filter((_, i) => selectedSets.has(i))
+    .join("");
+  const charArray = charPool.split("");
   const randomValues = new Uint32Array(Number(slider.value));
   crypto.getRandomValues(randomValues);
 
@@ -78,22 +60,24 @@ const generatePassword = () => {
 const writePassword = () => {
   const passwordText = document.getElementById("password");
   passwordText.textContent = password;
+  copyBtn.style.display = "inline-block";
 
   let timeInterval = setInterval(() => {
     secondsLeft--;
     const counter = document.getElementById("counter");
     counter.textContent = secondsLeft + " Seconds left, grab it!";
 
-    if (secondsLeft <= 0 || charString === "") {
+    if (secondsLeft <= 0 || selectedSets.size === 0) {
       clearInterval(timeInterval);
       passwordText.style.display = "none";
+      copyBtn.style.display = "none";
       counter.textContent = "Click reset button to start again";
     }
   }, 1000);
 };
 
 const resetVariables = () => {
-  charString = "";
+  selectedSets.clear();
   password = "";
 };
 
@@ -104,8 +88,16 @@ const reload = () => {
 
 generateBtn.addEventListener("click", generatePassword);
 generateBtn.addEventListener("click", writePassword);
-toggleBtnUpper.addEventListener("change", charSelecUpper);
-toggleBtnLower.addEventListener("change", charSelectLower);
-toggleBtnNum.addEventListener("change", num);
-toggleBtnSymb.addEventListener("change", symbols);
+toggleBtnUpper.addEventListener("change", toggleCharSet(0));
+toggleBtnLower.addEventListener("change", toggleCharSet(1));
+toggleBtnNum.addEventListener("change", toggleCharSet(2));
+toggleBtnSymb.addEventListener("change", toggleCharSet(3));
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(password).then(() => {
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => {
+      copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    }, 2000);
+  });
+});
 resetBtn.addEventListener("click", reload);
