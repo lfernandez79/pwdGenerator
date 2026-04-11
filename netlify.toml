@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+
+# Cache static assets (images, icons) for 1 year
+[[headers]]
+  for = "/public/assets/image/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache CSS and JS for 1 hour (allows quick updates)
+[[headers]]
+  for = "/public/assets/style/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/public/assets/JS/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Security headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
