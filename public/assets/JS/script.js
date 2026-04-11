@@ -7,6 +7,7 @@ const toggleBtnUpper = document.getElementById("customSwitch1");
 const toggleBtnLower = document.getElementById("customSwitch2");
 const toggleBtnNum = document.getElementById("customSwitch3");
 const toggleBtnSymb = document.getElementById("customSwitch4");
+const copyBtn = document.getElementById("copy");
 let secondsLeft = 10;
 
 const charSets = [
@@ -59,6 +60,7 @@ const generatePassword = () => {
 const writePassword = () => {
   const passwordText = document.getElementById("password");
   passwordText.textContent = password;
+  copyBtn.style.display = "inline-block";
 
   let timeInterval = setInterval(() => {
     secondsLeft--;
@@ -68,6 +70,7 @@ const writePassword = () => {
     if (secondsLeft <= 0 || selectedSets.size === 0) {
       clearInterval(timeInterval);
       passwordText.style.display = "none";
+      copyBtn.style.display = "none";
       counter.textContent = "Click reset button to start again";
     }
   }, 1000);
@@ -89,4 +92,12 @@ toggleBtnUpper.addEventListener("change", toggleCharSet(0));
 toggleBtnLower.addEventListener("change", toggleCharSet(1));
 toggleBtnNum.addEventListener("change", toggleCharSet(2));
 toggleBtnSymb.addEventListener("change", toggleCharSet(3));
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(password).then(() => {
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => {
+      copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    }, 2000);
+  });
+});
 resetBtn.addEventListener("click", reload);
