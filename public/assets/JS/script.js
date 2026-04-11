@@ -20,6 +20,7 @@ const charSets = [
 output.textContent = slider.value;
 slider.oninput = () => {
   output.textContent = slider.value;
+  slider.setAttribute("aria-valuenow", slider.value);
 };
 
 const selectedSets = new Set();
