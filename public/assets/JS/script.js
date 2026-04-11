@@ -7,7 +7,6 @@ const toggleBtnUpper = document.getElementById("customSwitch1");
 const toggleBtnLower = document.getElementById("customSwitch2");
 const toggleBtnNum = document.getElementById("customSwitch3");
 const toggleBtnSymb = document.getElementById("customSwitch4");
-const hsimp = document.getElementsByClassName("hsimp");
 let secondsLeft = 10;
 
 let charSet = [
@@ -27,27 +26,22 @@ let charString = "";
 const charSelecUpper = () => {
   if (toggleBtnUpper.checked === true) {
     charString += charSet[0].toString();
-    console.log(charString);
   } else {
     charString = charString.replace(charSet[0], "");
-    console.log(charString);
   }
 };
 
 const charSelectLower = () => {
   if (toggleBtnLower.checked === true) {
     charString += charSet[1].toString();
-    console.log(charString);
   } else {
     charString = charString.replace(charSet[1], "");
-    console.log(charString);
   }
 };
 
 const num = () => {
   if (toggleBtnNum.checked === true) {
     charString += charSet[2].toString();
-    console.log(charString);
   } else {
     charString = charString.replace(charSet[2], "");
   }
@@ -56,7 +50,6 @@ const num = () => {
 const symbols = () => {
   if (toggleBtnSymb.checked === true) {
     charString += charSet[3].toString();
-    console.log(charString);
   } else {
     charString = charString.replace(charSet[3], "");
   }
