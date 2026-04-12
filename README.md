@@ -26,10 +26,10 @@ A vanilla JavaScript webapp that generates secure random passwords based on user
 
 ## Screenshots
 
-| v1 | v2 | Mobile |
-|----|-----|--------|
-| <img src="public/assets/image/PG.png" width="350"> | <img src="public/assets/image/PG2.png" width="350"> | <img src="public/assets/image/mobilePG.png" width="150"> |
+| Desktop | Mobile |
+|---------|--------|
+| <img src="public/assets/image/desktop-screenshot.png" width="450"> | <img src="public/assets/image/mobile-screenshot.png" width="200"> |
 
 ## License
 
-MIT
+[MIT](LICENSE)
