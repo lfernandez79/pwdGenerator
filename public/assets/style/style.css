@@ -24,7 +24,7 @@ main {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.4);
   padding: 2.5rem;
-  max-width: 520px;
+  max-width: 600px;
   width: 100%;
   text-align: center;
 }
@@ -242,7 +242,60 @@ footer {
   font-size: 1.2rem;
 }
 
-/* Responsive */
+/* Desktop scale-up */
+@media (min-width: 768px) {
+  main {
+    padding: 3rem 3.5rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  #password {
+    font-size: 2.2rem;
+  }
+
+  #counter {
+    font-size: 2rem;
+  }
+
+  .slider-group label {
+    font-size: 1.3rem;
+  }
+
+  .slider-group span {
+    font-size: 1.5rem;
+  }
+
+  input[type="range"] {
+    width: 60%;
+  }
+
+  .toggle {
+    font-size: 1.3rem;
+  }
+
+  .toggles {
+    max-width: 380px;
+  }
+
+  #generate {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
+
+  #reset {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+  }
+
+  #copy {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
   main {
     padding: 1.5rem;
