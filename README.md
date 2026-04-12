@@ -1,38 +1,35 @@
-## Password Generator Portal
+# Password Generator Portal
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/lfernandez79/pwdGenerator?color=orange&logo=javascript)
-![GitHub commit merge status](https://img.shields.io/github/commit-status/lfernandez79/pwdGenerator/master/d65997ca00043d42e1fb834c57fa22cde8b9e339)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba2d4473-cac2-4651-8e04-33f0e6418493/deploy-status)](https://app.netlify.com/sites/pwdg/deploys)
 
-Re-new and improved Javascript web-app that creates a random password based on user-selected criteria. This app runs in the browser and mobile devices feature dynamically updated. Clean and polished user interface and responsive. 
+A vanilla JavaScript webapp that generates secure random passwords based on user-selected criteria. Runs in the browser — no backend, no dependencies, no build step.
 
-# [Launch it!](https://pwdg.netlify.app/)
+## [Launch it!](https://pwdg.netlify.app/)
 
-## Technology
+## Features
 
-```sh
-HTML
-CSS
-Boostrap
-Bootswatch
-Vanilla JavaScript
-```
-### Features 
-* Timer
-* Fontawesome
-* Favicon
-* Removed old alert questions for toggles.
-* Complete migration to ES6
-* Netlify 
+- Cryptographically secure generation via `crypto.getRandomValues()`
+- Adjustable length (8–30 characters)
+- Selectable character types: uppercase, lowercase, numbers, symbols
+- One-click copy to clipboard
+- 10-second auto-clear countdown
+- Accessible (ARIA live regions, labeled controls)
+- PWA-ready (Add to Home Screen on mobile)
 
-  ![Netlify](https://img.shields.io/netlify/ba2d4473-cac2-4651-8e04-33f0e6418493?style=plastic)
+## Tech Stack
 
-| Dated app    | New and Improved => ES6 | Mobile device |
-| -------------| ------------------------|---------------|
-| v1           | v2                      | v2            |
-| <img src="public/assets/image/PG.png" width="350"> | <img src="public/assets/image/PG2.png" width="350">| <img src="public/assets/image/mobilePG.png" width="150">|
+- HTML5, CSS3, vanilla JavaScript (ES module)
+- Bootstrap 4.6.0 + Bootswatch theme
+- Font Awesome icons
+- Deployed on Netlify (auto-deploy from `master`)
 
+## Screenshots
 
-#### Future
-* Enable PWA
-* Enable hsimp
+| v1 | v2 | Mobile |
+|----|-----|--------|
+| <img src="public/assets/image/PG.png" width="350"> | <img src="public/assets/image/PG2.png" width="350"> | <img src="public/assets/image/mobilePG.png" width="150"> |
+
+## License
+
+MIT
