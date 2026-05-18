@@ -56,6 +56,14 @@ h1 i {
   line-height: 1.4;
 }
 
+#strength {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
 #copy {
   margin-top: 0.5rem;
   background: transparent;
@@ -256,6 +264,10 @@ footer {
     font-size: 2.2rem;
   }
 
+  #strength {
+    font-size: 1.6rem;
+  }
+
   #counter {
     font-size: 2rem;
   }
@@ -307,6 +319,10 @@ footer {
 
   #password {
     font-size: 1.3rem;
+  }
+
+  #strength {
+    font-size: 1rem;
   }
 
   #counter {
