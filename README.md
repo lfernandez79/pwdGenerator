@@ -12,6 +12,7 @@ A vanilla JavaScript webapp that generates secure random passwords based on user
 - Cryptographically secure generation via `crypto.getRandomValues()`
 - Adjustable length (8–30 characters)
 - Selectable character types: uppercase, lowercase, numbers, symbols
+- Password strength estimate — shows how long an offline attacker would take to crack the result
 - One-click copy to clipboard
 - 10-second auto-clear countdown
 - Accessible (ARIA live regions, labeled controls)
@@ -20,7 +21,6 @@ A vanilla JavaScript webapp that generates secure random passwords based on user
 ## Tech Stack
 
 - HTML5, CSS3, vanilla JavaScript (ES module)
-- Bootstrap 4.6.0 + Bootswatch theme
 - Font Awesome icons
 - Deployed on Netlify (auto-deploy from `master`)
 

@@ -6,7 +6,6 @@ Live at: https://pwdg.netlify.app/
 
 ## Stack
 - HTML5, CSS3, vanilla JavaScript (ES6) — no frameworks, no build tools
-- Bootstrap 4.6.0 + Bootswatch theme (served via CDN)
 - Font Awesome icons (CDN)
 - Deployed on Netlify via GitHub auto-deploy from `master`
 
@@ -42,3 +41,4 @@ Uses Python's built-in HTTP server (no Node required):
 - [x] Add `netlify.toml` for cache/security headers
 - [x] Add ARIA attributes for accessibility
 - [x] Clean up PWA manifest (removed broken duplicate `site.webmanifest`)
+- [x] Add password strength estimate above Copy button (log10-space crack-time calc, offline 10B guesses/sec model)
