@@ -42,3 +42,4 @@ Uses Python's built-in HTTP server (no Node required):
 - [x] Add ARIA attributes for accessibility
 - [x] Clean up PWA manifest (removed broken duplicate `site.webmanifest`)
 - [x] Add password strength estimate above Copy button (log10-space crack-time calc, offline 10B guesses/sec model)
+- [x] Add "Check your own" tab mode — evaluates user-typed password, shows live strength + tips for missing categories, "Suggest stronger version" button that leet-substitutes and randomly pads the input (randomized on every click so suggestions vary)
