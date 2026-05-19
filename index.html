@@ -17,48 +17,78 @@
     <main>
         <h1><i class="fas fa-key"></i> Password Generator</h1>
 
-        <div class="password-display">
-            <p id="password" aria-label="Generated Password" aria-live="polite" role="status"></p>
-            <p id="strength" aria-live="polite"></p>
-            <button type="button" id="copy" style="display:none;"
-                aria-label="Copy password to clipboard">
-                <i class="fas fa-copy"></i> Copy
-            </button>
-        </div>
+        <nav class="tabs" role="tablist">
+            <button type="button" class="tab active" data-panel="generate" role="tab" aria-selected="true">Generate</button>
+            <button type="button" class="tab" data-panel="check" role="tab" aria-selected="false">Check your own</button>
+        </nav>
 
-        <p id="counter" aria-live="polite"></p>
+        <section id="generate-panel" class="panel" role="tabpanel">
+            <div class="password-display">
+                <p id="password" aria-label="Generated Password" aria-live="polite" role="status"></p>
+                <p id="strength" aria-live="polite"></p>
+                <button type="button" id="copy" style="display:none;"
+                    aria-label="Copy password to clipboard">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
 
-        <div class="slider-group">
-            <label for="customRange1">
-                Characters: <span id="sliderCounter"></span>
-            </label>
-            <input type="range" id="customRange1" min="8" max="30" value="8"
-                aria-label="Password character length" aria-valuemin="8" aria-valuemax="30" aria-valuenow="8">
-        </div>
+            <p id="counter" aria-live="polite"></p>
 
-        <div class="toggles">
-            <label class="toggle">
-                <input type="checkbox" id="customSwitch1">
-                <span>ABC</span>
-            </label>
-            <label class="toggle">
-                <input type="checkbox" id="customSwitch2">
-                <span>abc</span>
-            </label>
-            <label class="toggle">
-                <input type="checkbox" id="customSwitch3">
-                <span>123</span>
-            </label>
-            <label class="toggle">
-                <input type="checkbox" id="customSwitch4">
-                <span>!@#$%</span>
-            </label>
-        </div>
+            <div class="slider-group">
+                <label for="customRange1">
+                    Characters: <span id="sliderCounter"></span>
+                </label>
+                <input type="range" id="customRange1" min="8" max="30" value="8"
+                    aria-label="Password character length" aria-valuemin="8" aria-valuemax="30" aria-valuenow="8">
+            </div>
 
-        <div class="actions">
-            <button type="button" id="generate">Generate</button>
-            <button type="button" id="reset">Reset</button>
-        </div>
+            <div class="toggles">
+                <label class="toggle">
+                    <input type="checkbox" id="customSwitch1">
+                    <span>ABC</span>
+                </label>
+                <label class="toggle">
+                    <input type="checkbox" id="customSwitch2">
+                    <span>abc</span>
+                </label>
+                <label class="toggle">
+                    <input type="checkbox" id="customSwitch3">
+                    <span>123</span>
+                </label>
+                <label class="toggle">
+                    <input type="checkbox" id="customSwitch4">
+                    <span>!@#$%</span>
+                </label>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="generate">Generate</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </section>
+
+        <section id="check-panel" class="panel" role="tabpanel" hidden>
+            <div class="check-input-group">
+                <label for="check-input">Your password:</label>
+                <input type="text" id="check-input" autocomplete="off" autocapitalize="off" spellcheck="false"
+                    aria-describedby="check-strength check-tips">
+            </div>
+
+            <p id="check-strength" aria-live="polite"></p>
+            <ul id="check-tips" aria-live="polite"></ul>
+
+            <div id="suggestion-block" hidden>
+                <button type="button" id="suggest-btn">Suggest stronger version</button>
+                <div id="suggestion-result" hidden>
+                    <p class="suggestion-label">Try this:</p>
+                    <p id="suggested-password" aria-live="polite"></p>
+                    <p id="suggested-strength"></p>
+                    <button type="button" id="copy-suggestion" aria-label="Copy suggested password">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script type="module" src="public/assets/JS/script.js"></script>

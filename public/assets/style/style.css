@@ -41,6 +41,157 @@ h1 i {
   color: #333;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-family: "Neucha", cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.tab.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Check-your-own panel */
+.check-input-group {
+  margin-bottom: 1rem;
+}
+
+.check-input-group label {
+  display: block;
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+#check-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.3rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+}
+
+#check-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+#check-strength {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0.75rem 0 0.25rem;
+  min-height: 1.5rem;
+}
+
+#check-tips {
+  list-style: none;
+  margin: 0.25rem 0 1rem;
+  text-align: center;
+}
+
+#check-tips li {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.2rem 0;
+}
+
+#check-tips li::before {
+  content: "• ";
+}
+
+#suggestion-block {
+  margin-top: 0.5rem;
+}
+
+#suggest-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.3rem;
+  font-family: "Neucha", cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#suggest-btn:hover {
+  background: #555;
+}
+
+#suggestion-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.suggestion-label {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+#suggested-password {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #D2691E;
+  word-break: break-all;
+  margin-bottom: 0.5rem;
+}
+
+#suggested-strength {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+#copy-suggestion {
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 0.3rem 1rem;
+  font-family: "Neucha", cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s;
+}
+
+#copy-suggestion:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /* Password display */
 .password-display {
   min-height: 48px;
@@ -305,6 +456,36 @@ footer {
   #copy {
     font-size: 1.1rem;
   }
+
+  .tab {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  #check-input {
+    font-size: 1.5rem;
+  }
+
+  #check-tips li {
+    font-size: 1.25rem;
+  }
+
+  #check-strength {
+    font-size: 1.6rem;
+  }
+
+  #suggest-btn {
+    font-size: 1.15rem;
+    padding: 0.65rem 1.5rem;
+  }
+
+  #suggested-password {
+    font-size: 1.8rem;
+  }
+
+  #suggested-strength {
+    font-size: 1.3rem;
+  }
 }
 
 /* Mobile */
@@ -339,5 +520,26 @@ footer {
 
   #generate, #reset {
     width: 100%;
+  }
+
+  .tab {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  #check-input {
+    font-size: 1.1rem;
+  }
+
+  #check-tips li {
+    font-size: 0.95rem;
+  }
+
+  #check-strength {
+    font-size: 1.1rem;
+  }
+
+  #suggested-password {
+    font-size: 1.2rem;
   }
 }
